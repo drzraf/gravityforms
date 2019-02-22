@@ -89,7 +89,7 @@ function gf_is_match( formId, rule ) {
 	if( isInputSpecific ) {
 		$inputs = $( '#input_{0}_{1}_{2}'.format( formId, fieldId, inputIndex ) );
 	} else {
-		$inputs = $( 'input[id="input_{0}_{1}"], input[id^="input_{0}_{1}_"], input[id^="choice_{0}_{1}_"], select#input_{0}_{1}, textarea#input_{0}_{1}'.format( formId, rule.fieldId ) );
+		$inputs = $( 'input[id="input_{0}_{1}"], input[id^="input_{0}_{1}_"], input[id^="choice_{0}_{1}_"], select#input_{0}_{1}, textarea#input_{0}_{1}'.format( formId, fieldId ) );
 	}
 
 	var isCheckable = $.inArray( $inputs.attr( 'type' ), [ 'checkbox', 'radio' ] ) !== -1,
@@ -311,7 +311,7 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 
 		// reset tabindex for selects
 		$target.find( 'select' ).each( function() {
-			$select = jQuery( this );
+			var $select = jQuery( this );
 			$select.attr( 'tabindex', $select.data( 'tabindex' ) );
 		} );
 
@@ -353,7 +353,7 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 
 		// remove tabindex and stash as a data attr for selects
 		$target.find( 'select' ).each( function() {
-			$select = jQuery( this );
+			var $select = jQuery( this );
 			$select.data( 'tabindex', $select.attr( 'tabindex' ) ).removeAttr( 'tabindex' );
 		} );
 
@@ -376,6 +376,7 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			}
 		}
 	}
+
 }
 
 function gf_reset_to_default(targetId, defaultValue){

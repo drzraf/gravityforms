@@ -4495,18 +4495,20 @@ ul.gform_fields.right_label li.gfield.gfield_html .gfield_label {
 	width: 100%;
 }
 
-a.gf_insert_field_choice,
-a.gf_delete_field_choice {
+.gf_delete_field_choice,
+.gf_insert_field_choice{
 	color: #9B9B9B;
 	text-decoration: none;
 	margin-left: 6px;
 	font-size: 14px;
+	border: 0;
+	padding: 0;
 }
 
-a.gf_insert_field_choice:hover,
-a.gf_insert_field_choice:active,
-a.gf_delete_field_choice:hover,
-a.gf_delete_field_choice:active {
+.gf_insert_field_choice:hover,
+.gf_insert_field_choice:active,
+.gf_delete_field_choice:hover,
+.gf_delete_field_choice:active {
 	color: #444;
 }
 
